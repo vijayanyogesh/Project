@@ -15,21 +15,27 @@
             <span class="caret"></span>
             </button>
             <ul class="dropdown-menu">
-                <li><a href="#">Add to Shopping List</a></li>
-                <li><a href="#">Edit Recipe</a></li>
-                <li><a href="#">Delete Recipe</a></li>
+                <li><a (click) = "addToList(recipeDisplay.ingredient)" style="cursor: pointer;">Add to Shopping List</a></li>
+                <li><a style="cursor: pointer;">Edit Recipe</a></li>
+                <li><a style="cursor: pointer;" >Delete Recipe</a></li>
             </ul>
         </div>
     </div>
 </div>
 <div class="row">
     <div class="col-xs-12">
-        <h5>{{recipeDisplay.descrption}}</h5>
+        <h4>{{recipeDisplay.descrption}}</h4>
     </div>
 </div>
 <div class="row">
     <div class="col-xs-12">
-        <h5></h5>
+        <h4>Ingredients Required</h4>
+        <ul class="list-group">
+            <li class="list-group-item"
+            *ngFor = " let ing of recipeDisplay.ingredient">
+             {{ing.name}} -- {{ing.amount}}
+            </li>
+        </ul>
     </div>
 </div>
 
