@@ -20,10 +20,24 @@ export class RecipeService{
 
 
     getRecipes(){
-        return this.recipes.slice();
+        return this.recipes;
     }
 
     displayRecipes(num:number){
         return this.recipes[num];
+    }
+
+    addRecipe(rep:Recipe){
+        this.recipes.push(rep);
+
+    }
+
+    editRecipe(id:number,newRep:Recipe){
+        this.recipes[id] = newRep;
+
+    }
+
+    deleteRecipe(id:number){
+        this.recipes.splice(id,1);
     }
 }

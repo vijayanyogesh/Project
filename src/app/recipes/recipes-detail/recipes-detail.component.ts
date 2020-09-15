@@ -26,8 +26,6 @@ export class RecipesDetailComponent implements OnInit {
     
   }
 
-
-
   constructor(private shoppingService: ShoppingService, 
               private recipeService: RecipeService, 
               private route: ActivatedRoute,
@@ -47,6 +45,11 @@ export class RecipesDetailComponent implements OnInit {
 
     this.router.navigate(['edit'],{relativeTo:this.route});
 
+  }
+
+  deleteRecipe(){
+    this.recipeService.deleteRecipe(this.id);
+    this.router.navigate(['../'],{relativeTo:this.route})
   }
 
 }
